@@ -3,6 +3,7 @@
 
 # My config file
 /Resume.Server.API/PrivateSettings.config
+/Resume.Server.API/Web.config
 
 # User-specific files
 *.suo
