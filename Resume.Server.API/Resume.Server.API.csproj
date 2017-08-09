@@ -110,9 +110,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <Content Include="PrivateSettings.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Properties\PublishProfiles\KallstromRestful - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
