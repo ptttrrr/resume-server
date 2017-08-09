@@ -17,7 +17,7 @@ namespace Resume.Server.API
             config.MapHttpAttributeRoutes();
 
             // Cors settings*
-            config.EnableCors(new EnableCorsAttribute("", "*", "*"));
+            config.EnableCors();
 
             // Json support
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));

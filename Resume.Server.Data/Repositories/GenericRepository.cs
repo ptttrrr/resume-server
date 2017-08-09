@@ -23,7 +23,7 @@ namespace Resume.Server.Data.Repositories
 
 
         #region generic methods
-        public virtual IEnumerable<TEntity> GetAll()
+        public List<TEntity> GetAll()
         {
             return dbSet.ToList();
         }
