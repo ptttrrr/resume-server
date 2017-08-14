@@ -8,7 +8,7 @@ namespace Resume.Server.Mappers
 {
     public static class Mappers
     {
-        #region Entity to contract
+        #region Skill contracts
         public static SkillDTO ToContract(this Skill skill)
         {
             return new SkillDTO
@@ -30,10 +30,7 @@ namespace Resume.Server.Mappers
                         Scale = x.Scale
                     }).ToList();
         }
-        #endregion
 
-
-        #region Contract to entity
         public static Skill ToEntity(this SkillDTO skillDTO)
         {
             return new Skill
@@ -42,6 +39,30 @@ namespace Resume.Server.Mappers
                 Name = skillDTO.Name,
                 Scale = skillDTO.Scale
             };
+        }
+        #endregion
+
+        #region CoffeeStatus contracts
+        public static CoffeeStatusDTO ToContract(this CoffeeStatus coffeeStatus)
+        {
+            return new CoffeeStatusDTO
+            {
+                Id = coffeeStatus.Id,
+                Level = coffeeStatus.Level,
+                Timestamp = coffeeStatus.Timestamp
+            };
+        }
+
+        public static List<CoffeeStatusDTO> ToContracts(this List<CoffeeStatus> coffeeStats)
+        {
+            return
+                coffeeStats
+                    .Select(x => new CoffeeStatusDTO
+                    {
+                        Id = x.Id,
+                        Level = x.Level,
+                        Timestamp = x.Timestamp
+                    }).ToList();
         }
         #endregion
     }

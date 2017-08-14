@@ -26,5 +26,6 @@ namespace Resume.Server.Data
         }
     
         public virtual DbSet<Skill> Skill { get; set; }
+        public virtual DbSet<CoffeeStatus> CoffeeStatus { get; set; }
     }
 }
