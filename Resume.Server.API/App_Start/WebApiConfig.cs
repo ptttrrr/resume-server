@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Net.Http.Headers;
 using System.Web.Http.Cors;
 
+
 namespace Resume.Server.API
 {
     public static class WebApiConfig
@@ -17,7 +18,9 @@ namespace Resume.Server.API
             config.MapHttpAttributeRoutes();
 
             // Cors settings*
-            config.EnableCors();
+            var cors = new EnableCorsAttribute(origins: "http://localhost:4200", headers: "*", methods: "*");
+            config.EnableCors(cors);
+    
 
             // Json support
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
@@ -28,6 +31,7 @@ namespace Resume.Server.API
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
         }
     }
 }

@@ -65,5 +65,26 @@ namespace Resume.Server.Mappers
                     }).ToList();
         }
         #endregion
+
+        #region Message contracts
+        public static MessageDTO ToContract(this Message message)
+        {
+            return new MessageDTO
+            {
+                Id = message.Id,
+                TextMessage = message.TextMessage
+            };
+        }
+
+        public static Message ToEntity(this MessageDTO messageDTO)
+        {
+            return new Message
+            {
+                Id = messageDTO.Id,
+                TextMessage = messageDTO.TextMessage
+            };
+        }
+        #endregion
+
     }
 }
