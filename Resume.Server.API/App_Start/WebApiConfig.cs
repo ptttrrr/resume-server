@@ -18,12 +18,15 @@ namespace Resume.Server.API
             config.MapHttpAttributeRoutes();
 
             // Cors settings*
-            var cors = new EnableCorsAttribute(origins: "http://localhost:4200", headers: "*", methods: "*");
+            var cors = new EnableCorsAttribute(origins: "*", headers: "*", methods: "*");
             config.EnableCors(cors);
     
 
-            // Json support
+            // mediatype support
             config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("text/html"));
+            config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("multipart/form-data"));
+          //  config.Formatters.JsonFormatter.SupportedMediaTypes.Add(new MediaTypeHeaderValue("multipart/form-data"));
+
 
 
             config.Routes.MapHttpRoute(

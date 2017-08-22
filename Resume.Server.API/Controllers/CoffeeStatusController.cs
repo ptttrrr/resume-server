@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using Resume.Server.Business;
 using Resume.Server.Contracts;
@@ -26,5 +25,20 @@ namespace Resume.Server.API.Controllers
             return service.GetAll();
         }
 
+        [HttpPost]
+          public IHttpActionResult Post(CoffeeFamine coffeeFamine)
+        {
+            string test = coffeeFamine.ToString();
+
+            this.service.GetAll();
+
+            return Ok();
+        }
+
+    }
+
+    public class CoffeeFamine
+    {
+        public string Timestamp { get; set; }
     }
 }
